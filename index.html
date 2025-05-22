@@ -1,46 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>House of Echoes</title>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Internal Compliance Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background-color: black;
-      color: crimson;
-      font-family: 'UnifrakturCook', cursive;
-      text-align: center;
-      padding-top: 10%;
+      background-color: #f2f4f8;
+      color: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
+
+    form {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 40px;
+      width: 420px;
+      position: relative;
+    }
+
     h1 {
-      animation: flicker 2s infinite;
+      font-weight: 600;
+      font-size: 22px;
+      color: #002b45;
+      margin-bottom: 20px;
     }
+
     input, textarea {
-      background-color: #111;
-      border: 1px solid crimson;
-      color: crimson;
+      background-color: #f9fbfd;
+      border: 1px solid #c3cbdc;
+      border-radius: 4px;
+      color: #1a1a1a;
       padding: 10px;
+      width: 100%;
       margin: 10px 0;
-      width: 70%;
+      font-size: 14px;
     }
+
     input[type="submit"] {
-      background-color: crimson;
-      color: black;
+      background-color: #005b96;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      padding: 12px;
+      width: 100%;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #003f63;
+    }
+
+    small {
+      display: block;
+      text-align: center;
+      color: #6c757d;
+      font-size: 12px;
+      margin-top: 15px;
+      transition: 0.3s ease;
       cursor: pointer;
     }
+
+    small:hover {
+      color: #b30000;
+    }
+
+    /* Hidden uncanny overlay */
+    .overlay {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 11px;
+      color: #c4c4c4;
+      opacity: 0.6;
+      pointer-events: none;
+      animation: flicker 10s infinite;
+    }
+
     @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
+      0%, 100% { opacity: 0.1; }
+      45% { opacity: 0.6; }
+      50% { opacity: 0; }
+      55% { opacity: 0.4; }
+      70% { opacity: 0.8; }
     }
   </style>
 </head>
 <body>
-  <h1>Enter the House of Echoes</h1>
-  <form name="haunted" netlify>
-    <input type="text" name="name" placeholder="Your true name..." required><br>
-    <input type="email" name="email" placeholder="Where the spirits may reach you..." required><br>
-    <textarea name="confession" placeholder="Confess what haunts you..." required></textarea><br>
-    <input type="submit" value="Submit to the void">
+  <form name="corporate-haunt" netlify>
+    <div class="overlay">Version 13.4.2.1 (Do not discuss externally)</div>
+    <h1>Internal Compliance Review</h1>
+    <input type="text" name="employee_id" placeholder="Employee ID..." required>
+    <input type="email" name="contact" placeholder="Work Email..." required>
+    <textarea name="incident" placeholder="Describe the event..." required></textarea>
+    <input type="submit" value="Acknowledge and Submit">
+    <small id="disclaimer">By submitting, you consent to standard data practices.</small>
   </form>
+
+  <script>
+    const disclaimer = document.getElementById('disclaimer');
+    disclaimer.addEventListener('mouseover', () => {
+      disclaimer.innerText = "By submitting, you relinquish naming rights.";
+    });
+  </script>
 </body>
 </html>
-
