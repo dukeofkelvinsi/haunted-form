@@ -2,18 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>StrahdCo™ Onboarding Portal</title>
+  <title>StrahdCo™ Onboarding</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       background-color: #f2f4f8;
       color: #1a1a1a;
       font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
+      min-height: 100vh;
     }
 
     form {
@@ -21,7 +26,8 @@
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 40px;
-      width: 440px;
+      width: 100%;
+      max-width: 600px;
       position: relative;
     }
 
@@ -39,7 +45,7 @@
       color: #1a1a1a;
       padding: 10px;
       width: 100%;
-      margin: 10px 0;
+      margin: 10px 0 20px 0;
       font-size: 14px;
     }
 
@@ -115,57 +121,69 @@
       color: #4b4b4b;
       margin-bottom: 30px;
     }
+
+    label {
+      font-weight: 600;
+      font-size: 14px;
+      display: block;
+      text-align: left;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 30px 0;
+    }
   </style>
 </head>
 <body>
-  <form name="corporate-haunt" netlify>
+  <form name="strahdco-onboarding" netlify>
     <div class="overlay">Version 13.4.2.1 (Do not discuss externally)</div>
-    
+
     <div class="hr-copy">
       <p><strong>Welcome to StrahdCo™!</strong> We’re absolutely thrilled to have you join our growing family of valued associates, bonded agents, and flesh contributors. 🧛</p>
-      
       <p>At StrahdCo™, we believe in empowering every thrall—er, team member—to achieve their optimal potential under careful observation and approved lighting conditions.</p>
-      
       <p>Please take a moment to complete this onboarding form in full. Your answers will be used to streamline your assimilation and calibrate your loyalty quotient. Incomplete forms may be interpreted as dissent.</p>
-      
       <p><em>Remember: Your compliance is the cornerstone of our continued eternity.</em></p>
     </div>
 
     <h1>Internal Compliance Review</h1>
+
     <input type="text" name="employee_id" placeholder="Employee ID..." required>
     <input type="email" name="contact" placeholder="Work Email..." required>
     <textarea name="incident" placeholder="Describe the event..." required></textarea>
-    <hr style="margin: 30px 0; border: none; border-top: 1px solid #ccc;">
 
-<label for="motivation" style="font-weight: 600; font-size: 14px; display: block; text-align: left;">What motivates you to serve?</label>
-<textarea name="motivation" id="motivation" placeholder="Enter your answer..." required></textarea>
+    <hr>
 
-<label for="authority" style="font-weight: 600; font-size: 14px; display: block; text-align: left;">Describe your relationship with authority.</label>
-<textarea name="authority" id="authority" placeholder="Be honest. This will be seen." required></textarea>
+    <label for="motivation">What motivates you to serve?</label>
+    <textarea name="motivation" id="motivation" placeholder="Enter your answer..." required></textarea>
 
-<label for="before" style="font-weight: 600; font-size: 14px; display: block; text-align: left;">What do you remember from Before?</label>
-<textarea name="before" id="before" placeholder="Only what you're permitted to recall." required></textarea>
+    <label for="authority">Describe your relationship with authority.</label>
+    <textarea name="authority" id="authority" placeholder="Be honest. This will be seen." required></textarea>
 
-<label for="memorial" style="font-weight: 600; font-size: 14px; display: block; text-align: left;">If a team member disappears, how will you memorialize them?</label>
-<textarea name="memorial" id="memorial" placeholder="Be creative. Efficiency is also appreciated." required></textarea>
+    <label for="before">What do you remember from Before?</label>
+    <textarea name="before" id="before" placeholder="Only what you're permitted to recall." required></textarea>
 
-<label for="truths" style="font-weight: 600; font-size: 14px; display: block; text-align: left;">List three truths about yourself and one fabrication.</label>
-<textarea name="truths" id="truths" placeholder="Do not label which is which. We will know." required></textarea>
+    <label for="memorial">If a team member disappears, how will you memorialize them?</label>
+    <textarea name="memorial" id="memorial" placeholder="Be creative. Efficiency is also appreciated." required></textarea>
 
-<label for="forget" style="font-weight: 600; font-size: 14px; display: block; text-align: left;">What would you like to forget?</label>
-<textarea name="forget" id="forget" placeholder="Your answer will be archived indefinitely." required></textarea>
+    <label for="truths">List three truths about yourself and one fabrication.</label>
+    <textarea name="truths" id="truths" placeholder="Do not label which is which. We will know." required></textarea>
 
-<label for="sacrifice" style="font-weight: 600; font-size: 14px; display: block; text-align: left;">What are you willing to sacrifice to advance at StrahdCo?</label>
-<textarea name="sacrifice" id="sacrifice" placeholder="Time. Memory. Loyalty. Flesh. Other." required></textarea>
+    <label for="forget">What would you like to forget?</label>
+    <textarea name="forget" id="forget" placeholder="Your answer will be archived indefinitely." required></textarea>
 
-<label for="betrayal" style="font-weight: 600; font-size: 14px; display: block; text-align: left;">Who would you betray for your freedom?</label>
-<textarea name="betrayal" id="betrayal" placeholder="Please provide full name(s) if available." required></textarea>
+    <label for="sacrifice">What are you willing to sacrifice to advance at StrahdCo?</label>
+    <textarea name="sacrifice" id="sacrifice" placeholder="Time. Memory. Loyalty. Flesh. Other." required></textarea>
 
-<label for="chosen" style="font-weight: 600; font-size: 14px; display: block; text-align: left;">Do you believe you were chosen… or selected?</label>
-<textarea name="chosen" id="chosen" placeholder="This is not a philosophical question." required></textarea>
+    <label for="betrayal">Who would you betray for your freedom?</label>
+    <textarea name="betrayal" id="betrayal" placeholder="Please provide full name(s) if available." required></textarea>
 
-<label for="fear" style="font-weight: 600; font-size: 14px; display: block; text-align: left;">What do you fear we already know about you?</label>
-<textarea name="fear" id="fear" placeholder="You may redact details. But why would you?" required></textarea>
+    <label for="chosen">Do you believe you were chosen… or selected?</label>
+    <textarea name="chosen" id="chosen" placeholder="This is not a philosophical question." required></textarea>
+
+    <label for="fear">What do you fear we already know about you?</label>
+    <textarea name="fear" id="fear" placeholder="You may redact details. But why would you?" required></textarea>
 
     <input type="submit" value="Acknowledge and Submit">
     <small id="disclaimer">By submitting, you consent to standard data practices.</small>
