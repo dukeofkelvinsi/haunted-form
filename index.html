@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>House of Echoes</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: black;
+      color: crimson;
+      font-family: 'UnifrakturCook', cursive;
+      text-align: center;
+      padding-top: 10%;
+    }
+    h1 {
+      animation: flicker 2s infinite;
+    }
+    input, textarea {
+      background-color: #111;
+      border: 1px solid crimson;
+      color: crimson;
+      padding: 10px;
+      margin: 10px 0;
+      width: 70%;
+    }
+    input[type="submit"] {
+      background-color: crimson;
+      color: black;
+      cursor: pointer;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Enter the House of Echoes</h1>
+  <form name="haunted" netlify>
+    <input type="text" name="name" placeholder="Your true name..." required><br>
+    <input type="email" name="email" placeholder="Where the spirits may reach you..." required><br>
+    <textarea name="confession" placeholder="Confess what haunts you..." required></textarea><br>
+    <input type="submit" value="Submit to the void">
+  </form>
+</body>
+</html>
 
