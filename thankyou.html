@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background-color: #f2f4f8;
+      color: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1, p {
+      z-index: 2;
+    }
+
+    .glitch {
+      font-size: 20px;
+      color: crimson;
+      opacity: 0;
+      animation: reveal 1s forwards 4s, flicker 0.2s infinite 5s;
+    }
+
+    @keyframes reveal {
+      to { opacity: 1; }
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 0.2; }
+    }
+
+    .jumpscare {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: red;
+      font-size: 32px;
+      font-weight: bold;
+      z-index: 999;
+      display: none;
+    }
+
+    .jumpscare img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.4) brightness(0.8);
+    }
+
+    .hidden-data {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thank you for your submission.</h1>
+  <p>Welcome to StrahdCo™, <span id="username">employee</span>.</p>
+  <p>You have been classified as <span id="classvalue">[REDACTED]</span>.</p>
+  <p class="glitch" id="glitchline">Verification complete. Preparing binding rituals...</p>
+
+  <div class="jumpscare" id="jumpscare">
+    <img src="https://i.imgur.com/0ZfZfBt.png" alt="screamer">
+  </div>
+
+  <!-- Hidden fields passed from form -->
+  <div class="hidden-data">
+    <form name="strahdco-onboarding">
+      <input type="text" name="employee_name" id="employee_name">
+      <input type="text" name="class" id="class">
+    </form>
+  </div>
+
+  <script>
+    const query = new URLSearchParams(window.location.search);
+
+    const name = query.get("employee_name") || "employee";
+    const classVal = query.get("class") || "[REDACTED]";
+
+    document.getElementById("username").innerText = name;
+    document.getElementById("classvalue").innerText = classVal;
+
+    // Jumpscare after delay
+    setTimeout(() => {
+      const jump = document.getElementById("jumpscare");
+      jump.style.display = "flex";
+
+      const audio = new Audio("https://www.myinstants.com/media/sounds/scream_1.mp3");
+      audio.play();
+    }, 7000);
+  </script>
+</body>
+</html>
