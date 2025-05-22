@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Internal Compliance Form</title>
+  <title>StrahdCo™ Onboarding Portal</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -21,7 +21,7 @@
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 40px;
-      width: 420px;
+      width: 440px;
       position: relative;
     }
 
@@ -73,7 +73,6 @@
       color: #b30000;
     }
 
-    /* Hidden uncanny overlay */
     .overlay {
       position: absolute;
       top: -20px;
@@ -94,17 +93,51 @@
       55% { opacity: 0.4; }
       70% { opacity: 0.8; }
     }
+
+    .loader {
+      text-align: center;
+      font-size: 12px;
+      color: #5b5b5b;
+      margin-top: 10px;
+      animation: blink 1.2s infinite;
+      user-select: none;
+    }
+
+    @keyframes blink {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+    .hr-copy {
+      text-align: left;
+      font-size: 14px;
+      color: #4b4b4b;
+      margin-bottom: 30px;
+    }
   </style>
 </head>
 <body>
   <form name="corporate-haunt" netlify>
     <div class="overlay">Version 13.4.2.1 (Do not discuss externally)</div>
+    
+    <div class="hr-copy">
+      <p><strong>Welcome to StrahdCo™!</strong> We’re absolutely thrilled to have you join our growing family of valued associates, bonded agents, and flesh contributors. 🧛</p>
+      
+      <p>At StrahdCo™, we believe in empowering every thrall—er, team member—to achieve their optimal potential under careful observation and approved lighting conditions.</p>
+      
+      <p>Please take a moment to complete this onboarding form in full. Your answers will be used to streamline your assimilation and calibrate your loyalty quotient. Incomplete forms may be interpreted as dissent.</p>
+      
+      <p><em>Remember: Your compliance is the cornerstone of our continued eternity.</em></p>
+    </div>
+
     <h1>Internal Compliance Review</h1>
     <input type="text" name="employee_id" placeholder="Employee ID..." required>
     <input type="email" name="contact" placeholder="Work Email..." required>
     <textarea name="incident" placeholder="Describe the event..." required></textarea>
     <input type="submit" value="Acknowledge and Submit">
     <small id="disclaimer">By submitting, you consent to standard data practices.</small>
+    <div class="loader">🧿 Now Scanning...</div>
   </form>
 
   <script>
