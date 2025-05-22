@@ -137,7 +137,7 @@
   </style>
 </head>
 <body>
-  <form name="strahdco-onboarding" netlify>
+  <form name="strahdco-onboarding" method="POST" data-netlify="true" action="thankyou.html?employee_name={employee_name}&class={class}">
     <div class="overlay">Version 13.4.2.1 (Do not discuss externally)</div>
 
     <div class="hr-copy">
@@ -151,9 +151,16 @@
 
 <input type="text" name="employee_name" placeholder="Full Name (as it appeared in the offer contract)..." required>
 
-<input type="text" name="class" placeholder="Occupational Classification (e.g., Fighter, Warlock, Other)" required>
+<input type="text" name="age" placeholder="Chronological Age (claimed or observed)..." required>
+
+<input type="text" name="gender" placeholder="Stated Gender Presentation (optional, for HR rituals)..." required>
+
+<input type="text" name="species" placeholder="Species or Lineage (per registry, not self-identified)..." required>
+
+<input type="text" name="class" placeholder="Occupational Classification (e.g., Fighter, Warlock, Other)..." required>
 
 <textarea name="recruitment_event" placeholder="Briefly describe the incident or failure that led to your selection for employment..." required></textarea>
+
 
 
     <hr>
@@ -199,5 +206,15 @@
       disclaimer.innerText = "By submitting, you relinquish naming rights.";
     });
   </script>
+
+<script>
+  document.querySelector("form").addEventListener("submit", function(e) {
+    const name = document.querySelector('input[name="employee_name"]').value;
+    const charClass = document.querySelector('input[name="class"]').value;
+    this.action = `thankyou.html?employee_name=${encodeURIComponent(name)}&class=${encodeURIComponent(charClass)}`;
+  });
+</script>
+
+  
 </body>
 </html>
